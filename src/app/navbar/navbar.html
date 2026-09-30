@@ -1,0 +1,63 @@
+<nav>
+
+    <div class="logo">
+        <a routerLink="/">YumExpress</a>
+    </div>
+
+    <ul>
+
+        <li>
+            <a
+                routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a
+                routerLink="/menu"
+                routerLinkActive="active">
+                Menu
+            </a>
+        </li>
+
+        <li>
+            <a
+                routerLink="/about"
+                routerLinkActive="active">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a
+                routerLink="/contact"
+                routerLinkActive="active">
+                Contact
+            </a>
+        </li>
+
+        <li>
+            <a
+                routerLink="/cart"
+                routerLinkActive="active"
+                class="cart-link">
+
+                Cart
+
+                <span
+                    class="cart-badge"
+                    *ngIf="cartCount > 0">
+
+                    {{ cartCount }}
+
+                </span>
+
+            </a>
+        </li>
+
+    </ul>
+
+</nav>

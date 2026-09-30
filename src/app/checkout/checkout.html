@@ -1,0 +1,112 @@
+
+<section class="checkout">
+
+    <h1>Checkout</h1>
+
+    <p class="checkout-subtitle">
+        Complete your order below before placing it.
+    </p>
+
+    <div class="checkout-container">
+
+        <!-- Customer Details -->
+        <div class="checkout-form">
+
+            <h2>Customer Details</h2>
+
+            <label for="name">Full Name</label>
+
+            <input
+                id="name"
+                type="text"
+                [(ngModel)]="customerName"
+                placeholder="Enter your full name">
+
+            <label for="phone">Phone Number</label>
+
+            <input
+                id="phone"
+                type="tel"
+                [(ngModel)]="phone"
+                placeholder="Enter your phone number">
+
+            <label for="address">Delivery Address</label>
+
+            <textarea
+                id="address"
+                rows="4"
+                [(ngModel)]="address"
+                placeholder="Enter your delivery address">
+            </textarea>
+
+            <label for="payment">Payment Method</label>
+
+            <select
+                id="payment"
+                [(ngModel)]="paymentMethod">
+
+                <option value="Cash on Delivery">
+                    Cash on Delivery
+                </option>
+
+                <option value="Card on Delivery">
+                    Card on Delivery
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+
+            <h2>Order Summary</h2>
+
+            <div
+                class="summary-item"
+                *ngFor="let item of cartItems">
+
+                <div>
+
+                    <strong>{{ item.food.name }}</strong>
+
+                    <br>
+
+                    Quantity: {{ item.quantity }}
+
+                </div>
+
+                <div>
+
+                    R{{ (item.food.price * item.quantity) | number:'1.2-2' }}
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="total">
+
+                <h3>
+
+                    Total:
+                    R{{ getTotal() | number:'1.2-2' }}
+
+                </h3>
+
+            </div>
+
+            <button
+                class="place-order-btn"
+                (click)="placeOrder()">
+
+                Place Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>

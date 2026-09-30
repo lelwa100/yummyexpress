@@ -1,0 +1,96 @@
+
+<section class="cart">
+
+    <h1>Your Cart</h1>
+
+    <p class="cart-subtitle">
+        Review your selected meals before checkout.
+    </p>
+
+    <!-- Empty Cart -->
+    <div class="empty-cart" *ngIf="cartItems.length === 0">
+
+        <h2>Your cart is empty.</h2>
+
+    </div>
+
+    <!-- Cart Items -->
+    <div *ngIf="cartItems.length > 0">
+
+        <div
+            class="cart-item"
+            *ngFor="let item of cartItems">
+
+            <img
+                [src]="item.food.image"
+                [alt]="item.food.name">
+
+            <div class="details">
+
+                <h3>{{ item.food.name }}</h3>
+
+                <p>{{ item.food.description }}</p>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ item.food.category }}
+                </p>
+
+                <p>
+                    <strong>Price:</strong>
+                    R{{ item.food.price | number:'1.2-2' }}
+                </p>
+
+                <!-- Quantity Controls -->
+                <div class="quantity-controls">
+
+                    <button
+                        class="qty-btn"
+                        (click)="decrease(item.food.id)">
+                        -
+                    </button>
+
+                    <span>{{ item.quantity }}</span>
+
+                    <button
+                        class="qty-btn"
+                        (click)="increase(item.food.id)">
+                        +
+                    </button>
+
+                </div>
+
+                <p>
+                    <strong>Subtotal:</strong>
+                    R{{ (item.food.price * item.quantity) | number:'1.2-2' }}
+                </p>
+
+                <button
+                    class="remove-btn"
+                    (click)="removeItem(item.food.id)">
+                    🗑️ Remove
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Total -->
+        <div class="cart-total">
+
+            <h2>
+                Total:
+                R{{ getTotal() | number:'1.2-2' }}
+            </h2>
+
+            <button
+                class="checkout-btn"
+                (click)="goToCheckout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+</section>

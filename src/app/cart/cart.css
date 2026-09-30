@@ -1,0 +1,220 @@
+/* ===========================
+   CART PAGE
+=========================== */
+
+.cart {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.cart h1 {
+    text-align: center;
+    color: #ff6b35;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.cart-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* ===========================
+   EMPTY CART
+=========================== */
+
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+}
+
+.empty-cart img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.empty-cart h2 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.empty-cart p {
+    color: #888;
+}
+
+/* ===========================
+   CART ITEM
+=========================== */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: white;
+    width: 100%;
+    max-width: 550px;
+
+    margin: 15px auto;
+    padding: 15px;
+
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.details {
+    flex: 1;
+}
+
+.details h3 {
+    color: #ff6b35;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.details p {
+    color: #555;
+    font-size: 14px;
+    margin: 3px 0;
+}
+
+/* ===========================
+   QUANTITY BUTTONS
+=========================== */
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #ff6b35;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.qty-btn:hover {
+    background: #e65b2d;
+}
+
+.quantity-controls span {
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* ===========================
+   REMOVE BUTTON
+=========================== */
+
+.remove-btn {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #b02a37;
+}
+
+/* ===========================
+   TOTAL SECTION
+=========================== */
+
+.cart-total {
+    max-width: 550px;
+    margin: 30px auto;
+
+    background: #fff8f5;
+    border-radius: 12px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.cart-total h2 {
+    color: #ff6b35;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   CHECKOUT BUTTON
+=========================== */
+
+.checkout-btn {
+    background: #28a745;
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #218838;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+        max-width: 95%;
+    }
+
+    .cart-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .quantity-controls {
+        justify-content: center;
+    }
+
+    .cart-total {
+        max-width: 95%;
+    }
+
+}

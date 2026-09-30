@@ -1,0 +1,178 @@
+<section class="menu">
+
+    <h1>Our Menu</h1>
+
+    <p class="menu-subtitle">
+        Choose from our delicious meals and drinks.
+    </p>
+
+
+    <!-- Search Bar -->
+    <div class="search-container">
+
+        <input
+            type="text"
+            placeholder="Search for food..."
+            [(ngModel)]="searchText"
+            (input)="filterFoods()">
+
+    </div>
+
+
+
+    <!-- Category Filters -->
+    <div class="category-buttons">
+
+        <button
+            (click)="selectedCategory='All'; filterFoods()">
+            All
+        </button>
+
+
+        <button
+            (click)="selectedCategory='Burger'; filterFoods()">
+            Burgers
+        </button>
+
+
+        <button
+            (click)="selectedCategory='Pizza'; filterFoods()">
+            Pizza
+        </button>
+
+
+        <button
+            (click)="selectedCategory='Chicken'; filterFoods()">
+            Chicken
+        </button>
+
+
+        <button
+            (click)="selectedCategory='Wrap'; filterFoods()">
+            Wraps
+        </button>
+
+
+        <button
+            (click)="selectedCategory='Salad'; filterFoods()">
+            Salads
+        </button>
+
+
+        <button
+            (click)="selectedCategory='Dessert'; filterFoods()">
+            Desserts
+        </button>
+
+
+        <button
+            (click)="selectedCategory='Drink'; filterFoods()">
+            Drinks
+        </button>
+
+    </div>
+
+
+
+
+    <!-- Sort Menu -->
+
+    <div class="sort-container">
+
+        <select
+            [(ngModel)]="sortOption"
+            (change)="sortFoods()">
+
+
+            <option value="">
+                Sort By
+            </option>
+
+
+            <option value="priceLow">
+                Price: Low to High
+            </option>
+
+
+            <option value="priceHigh">
+                Price: High to Low
+            </option>
+
+
+            <option value="name">
+                Name: A-Z
+            </option>
+
+
+        </select>
+
+    </div>
+
+
+
+
+
+    <!-- Food Cards -->
+
+    <div class="menu-container">
+
+
+        <div
+            class="menu-card"
+            *ngFor="let food of filteredFoods">
+
+
+            <img
+                [src]="food.image"
+                [alt]="food.name">
+
+
+
+            <h3>
+                {{ food.name }}
+            </h3>
+
+
+
+            <p>
+                {{ food.description }}
+            </p>
+
+
+
+            <p>
+                <strong>
+                    Category:
+                </strong>
+
+                {{ food.category }}
+            </p>
+
+
+
+            <h4>
+
+                R{{ food.price | number:'1.2-2' }}
+
+            </h4>
+
+
+
+
+            <button
+                (click)="addToCart(food)">
+
+                Add to Cart
+
+            </button>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</section>
